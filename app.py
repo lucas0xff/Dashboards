@@ -1,12 +1,11 @@
-#streamlit run app.py
 
 import streamlit as st
 import plotly.express as px
 from dataset import df 
 from format import format_number
-from graficos import grafico_mapa_estado, grafico_rec_mensal, grafico_rec_estado, grafico_rec_categoria
+from graficos import grafico_mapa_estado, grafico_rec_mensal, grafico_rec_estado, grafico_rec_categoria, grafico_rec_vendedores
 
-st.title("Dashboard de teste do primeiro programa")
+st.title("Acompanhamento das métricas de vendas")
 
 p_one, p_two, p_tree = st.tabs(['dataset', 'receita', 'vendedores']) # Esse comando define a criação de 3 abas
 
@@ -15,7 +14,7 @@ with p_one: # Esse comando define o que conterá na página 1
     st.dataframe(df)
 # ---------------------------------------------------------------------------------------
 with p_two:
-    column_one, column_two, column_tree = st.columns(3)
+    column_one, column_two = st.columns(2)
 
     with column_one:
         st.metric('Faturamento Total',format_number(df['Preço'].sum(), 'R$') )
@@ -28,6 +27,10 @@ with p_two:
         st.plotly_chart(grafico_rec_mensal, use_container_width=True)
         st.plotly_chart(grafico_rec_categoria, use_container_width= True)
 
-    #with column_tree:
+with p_tree:
+    column_one, column_two = st.columns(2)
+    
+    with column_one:
+        st.plotly_chart(grafico_rec_vendedores)
 
 

@@ -46,4 +46,10 @@ grafico_rec_categoria = px.bar(
     title= 'Top 7 categorias com maior receita',
 )
 
-#grafico_vendedores = 
+grafico_rec_vendedores = px.bar(
+    df_vendedores[['sum']].sort_values('sum', ascending= False).head(7),
+    x = 'sum',
+    y = df_vendedores[['sum']].sort_values('sum', ascending = False).head(7).index,
+    text_auto= True,
+    title= 'Top 7 vendedores por receita'
+)
