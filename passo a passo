@@ -1,0 +1,34 @@
+necessário abrir o terminal e digitar
+
+python -m venv .venv:
+
+Esse comando cria um ambiente virtual chamado .venv na pasta atual. Um ambiente virtual é uma instalação isolada do Python 
+que permite gerenciar dependências de projetos separadamente, evitando conflitos entre bibliotecas de diferentes projetos.
+
+.\.venv\Scripts\activate:
+
+Esse comando ativa o ambiente virtual que você criou na etapa anterior. Após a ativação, o prompt mostrará o nome do ambiente 
+(geralmente, você verá algo como (.venv) no início), indicando que você está usando o ambiente virtual. Com o ambiente ativo, 
+todos os pacotes instalados por meio de pip serão instalados apenas nesse ambiente, sem afetar a instalação global do Python 
+no seu sistema.
+
+pip list:
+
+Esse comando lista todos os pacotes Python atualmente instalados no ambiente ativo. Após a criação de um ambiente virtual, ele 
+geralmente contém apenas alguns pacotes básicos. Esse comando é útil para verificar quais pacotes e suas versões estão presentes 
+no ambiente.
+
+pip install pandas:
+
+Esse comando instala a biblioteca pandas no ambiente virtual ativo. O pandas é uma biblioteca popular em Python para manipulação 
+e análise de dados. Com isso, você poderá usar pandas para trabalhar com estruturas de dados, como DataFrames, facilitando o 
+processamento e análise de grandes conjuntos de dados.
+
+
+
+dataset - conjunto de dados
+dataframe - planilha/quadro de dados
+
+ctrl + c = para o terminal
+
+'python' + "caractere" + tab = nome do programa
