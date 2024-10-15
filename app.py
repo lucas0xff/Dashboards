@@ -3,10 +3,17 @@ import streamlit as st
 import plotly.express as px
 from dataset import df 
 from format import format_number
-from graficos import grafico_mapa_estado, grafico_rec_mensal, grafico_rec_estado, grafico_rec_categoria, grafico_rec_vendedores
+from graficos import grafico_mapa_estado, grafico_rec_mensal, grafico_rec_estado, grafico_rec_categoria, grafico_rec_vendedores, grafico_vendas_vendedores
 
 st.title("Acompanhamento das métricas de vendas")
+st.sidebar.title('Filtro de vendedores')
 
+filtro_vendedor = st.sidebar.multiselect(
+    'Vendedores',
+    df['Vendedor'].unique()
+)
+if filtro_vendedor:
+    df= df[df['Vendedor'].isin(filtro_vendedor)]
 p_one, p_two, p_tree = st.tabs(['dataset', 'receita', 'vendedores']) # Esse comando define a criação de 3 abas
 
 # ---------------------------------------------------------------------------------------
@@ -32,5 +39,8 @@ with p_tree:
     
     with column_one:
         st.plotly_chart(grafico_rec_vendedores)
+
+    with column_two:
+        st.plotly_chart(grafico_vendas_vendedores)
 
 
