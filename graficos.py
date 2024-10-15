@@ -1,5 +1,5 @@
 import plotly.express as px
-from format import df_rec_estado, df_rec_mensal, df_rec_categoria
+from format import df_rec_estado, df_rec_mensal, df_rec_categoria, df_vendedores
 
 # Verifique se o DataFrame está carregado corretamente
 print(df_rec_mensal.head())  # Confirmação básica dos dados
@@ -40,7 +40,10 @@ grafico_rec_estado = px.bar(
 
 
 grafico_rec_categoria = px.bar(
+
     df_rec_categoria.head(5),
     text_auto= True,
     title= 'Top 7 categorias com maior receita',
 )
+
+#grafico_vendedores = 

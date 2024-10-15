@@ -15,7 +15,7 @@ with p_one: # Esse comando define o que conterá na página 1
     st.dataframe(df)
 # ---------------------------------------------------------------------------------------
 with p_two:
-    column_one, column_two = st.columns(2)
+    column_one, column_two, column_tree = st.columns(3)
 
     with column_one:
         st.metric('Faturamento Total',format_number(df['Preço'].sum(), 'R$') )
