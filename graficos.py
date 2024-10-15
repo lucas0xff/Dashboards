@@ -1,5 +1,5 @@
 import plotly.express as px
-from format import df_rec_estado, df_rec_mensal
+from format import df_rec_estado, df_rec_mensal, df_rec_categoria
 
 # Verifique se o DataFrame está carregado corretamente
 print(df_rec_mensal.head())  # Confirmação básica dos dados
@@ -27,5 +27,20 @@ grafico_rec_mensal = px.line(
     line_dash='Ano',
     title='Receita Mensal'
 )
-
 grafico_rec_mensal.update_layout(yaxis_title='Receita')
+
+grafico_rec_estado = px.bar(
+
+    df_rec_estado.head(10),
+    x = 'Local da compra',
+    y = 'Preço',
+    text_auto = True,
+    title = 'Top receita por Estados'
+)
+
+
+grafico_rec_categoria = px.bar(
+    df_rec_categoria.head(5),
+    text_auto= True,
+    title= 'Top 7 categorias com maior receita',
+)
