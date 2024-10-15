@@ -4,10 +4,8 @@ pandas
 """
 
 
-import streamlit as st
 import json # Biblioteca para usar as funções de manipular os arquivos .json
 import pandas # Biblioteca que permite organizar como linhas e colunas
-st.title('Dataset de Vendas')
 
 file = open('vendas.json')
 dados = json.load(file)
