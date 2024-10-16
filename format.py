@@ -1,5 +1,7 @@
 from dataset import df
 import pandas 
+import streamlit as st
+import time
 
 def format_number(value, prefix=''):  # Converte os dados maiores que mil para notação científica
     for unit in ['', 'mil']:
@@ -27,3 +29,13 @@ print(df_rec_categoria.head(5))
 
 df_vendedores = pandas.DataFrame(df.groupby('Vendedor')['Preço'].agg(['sum', 'count']))
 print(df_vendedores)
+
+# Convertendo o arquivo do dataframe para .CSV
+@st.cache_data
+def convert_csv(df):
+    return df.to_csv(index = False).encode('utf-8')
+
+def mensagem_sucesso():
+    success = st.success('Arquivo baixado com sucesso')
+    time.sleep(3)
+    success.empty()
