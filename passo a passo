@@ -32,3 +32,13 @@ dataframe - planilha/quadro de dados
 ctrl + c = para o terminal
 
 'python' + "caractere" + tab = nome do programa
+
+
+
+Pontos importantes, o projeto se consiste em combinar as ferramentas das bibliotecas e criar um layout para cada coisa dentro do streamlit
+
+Não esqueça de sempre verificar como os métodos recebem cada parâmetro e de testalos versionando no github
+
+Dentro do streamlit clound upe o arquivo principal .py como link do repositorio do github, e também tome cuidado com o versionamento das bibliotecas do requirements .txt porque elas costumam entrar em conflito.
+
+
